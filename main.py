@@ -8,6 +8,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import services, emergency, reviews, directions
+from database import engine, Base
+# Import models to ensure they are registered with Base.metadata
+from models import service
+
 
 # ── App Initialization ────────────────────────────────────
 
@@ -16,6 +20,11 @@ app = FastAPI(
     description="Location-aware essential service discovery with smart decision-based ranking.",
     version="1.0.0",
 )
+
+# ── Database Initialization ────────────────────────────────
+# Create tables if they don't exist
+Base.metadata.create_all(bind=engine)
+
 
 # ── CORS Middleware ───────────────────────────────────────
 

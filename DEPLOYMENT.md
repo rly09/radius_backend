@@ -2,13 +2,16 @@
 The backend is now configured to deploy via **Fly.io** using Docker.
 
 ### 1. Login to Fly.io
+If the `fly` command is not recognized, use the full path: `~\ .fly\bin\flyctl.exe`
 ```powershell
-fly auth login
+# Using the full path in PowerShell
+& "$Env:USERPROFILE\.fly\bin\flyctl.exe" auth login
 ```
+Or restart your terminal to use just `fly`.
 
 ### 2. Initialize App (First time only)
 ```powershell
-fly launch
+& "$Env:USERPROFILE\.fly\bin\flyctl.exe" launch
 ```
 Choose your app name and region. When asked for "Do you want to tweak these settings?", you can say No or Yes to adjust.
 

@@ -5,9 +5,16 @@ Follow these steps to deploy your backend to [Render](https://render.com/).
 ## 1. Create a Render Account
 If you haven't already, sign up at [Render](https://dashboard.render.com/).
 
-## 2. Connect Your GitHub Repository
+## 2. Create a Render PostgreSQL Database
+1. Click **New +** and select **PostgreSQL**.
+2. **Name**: `smart-service-db`.
+3. **Database**: `smart_service_finder`.
+4. Click **Create Database**.
+5. Once created, copy the **Internal Database URL** (if the app is on Render) or **External Database URL**.
+
+## 3. Connect Your GitHub Repository
 1. Click **New +** and select **Web Service**.
-2. Connect your GitHub/GitLab account and select your `smart_service_finder` repository.
+2. Connect your GitHub account and select your `radius_backend` repository.
 
 ## 3. Configure the Web Service
 - **Name**: `smart-service-finder-backend` (or your choice)

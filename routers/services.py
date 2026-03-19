@@ -14,6 +14,7 @@ import hashlib
 import random
 from datetime import time
 
+import os
 from database import get_db
 from models.service import Service, Review
 from schemas.service import (
@@ -24,7 +25,7 @@ from schemas.service import (
 from services.decision_engine import DecisionEngine
 
 # ── Google Maps API Key ──────────────────────────────────
-GOOGLE_MAPS_API_KEY = "AIzaSyAjKAdUcx2zDuGUhHu0cEK-YcNELj3-O84"
+GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 
 router = APIRouter(prefix="/services", tags=["Services"])
 engine = DecisionEngine()
